@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gizlilik Politikası | Soru Takip</title>
+  <style>
+    :root {
+      --primary: #4776E6;
+      --secondary: #8E54E9;
+      --bg: #F4F6F9;
+      --card: #FFFFFF;
+      --text: #2D3142;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 24px 16px 60px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #FFFFFF;
+      border-radius: 28px;
+      padding: 32px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(142, 84, 233, 0.25);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .lang-switch {
+      display: flex;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: var(--secondary);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(71, 118, 230, 0.1);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 24px 20px;
+      }
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div>
+        <h1 id="page-title">Soru Takip – Gizlilik Politikası</h1>
+        <p id="page-subtitle">Son Güncelleme: 20 Kasım 2026</p>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+
+    <!-- ==================== TÜRKÇE İÇERİK ==================== -->
+    <div id="content-tr">
+      <div class="card">
+        <h2>1. Genel Bakış</h2>
+        <p>
+          <strong>Soru Takip</strong> uygulaması, öğrencilerin (2. sınıftan 8. sınıfa kadar) ders çalışma süreçlerini takip etmeleri, hedefler belirlemeleri ve eğitsel mini oyunlarla motivasyonlarını artırmaları için geliştirilmiştir.
+        </p>
+        <p>
+          Öğrencilerin ve ebeveynlerin gizliliği bizim için en yüksek önceliğe sahiptir. Bu politika, hangi verilerin nasıl işlendiğini ve korunduğunu açıklar.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>2. Cihazda Yerel Olarak Saklanan Veriler</h2>
+        <span class="badge">SQLite &amp; SharedPreferences</span>
+        <p>Uygulama içindeki verilerin büyük çoğunluğu yalnızca kullanıcının kendi cihazında yerel olarak depolanır ve dış sunuculara gönderilmez:</p>
+        <ul>
+          <li><strong>Çalışma Kayıtları:</strong> Ders, konu, doğru/yanlış/boş sayıları ve tarih bilgileri.</li>
+          <li><strong>Oyunlaştırma ve Profil Tercihleri:</strong> Seçilen takma ad, avatar emojisi, sınıf düzeyi, günlük hedef, XP, seviye, seri (streak), mola jetonları ve sanal evcil hayvan ilerlemesi.</li>
+          <li><strong>Ebeveyn Denetimi:</strong> Ebeveyn tarafından belirlenen 4 haneli PIN kodu ve günlük oyun limiti yalnızca cihazın yerel hafızasında saklanır, hiçbir sunucuyla paylaşılmaz.</li>
+          <li><strong>Uygulama Ayarları:</strong> Tema (açık/koyu mod), dil tercihi ve yerel bildirim ayarları.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>3. Bulut Senkronizasyonu (Firebase Firestore)</h2>
+        <span class="badge">Liderlik Tablosu</span>
+        <p>
+          Uygulama içindeki <strong>Liderlik Tablosu</strong> özelliğini çalıştırmak amacıyla, Google Firebase Firestore altyapısına yalnızca aşağıdaki sınırlı ve kimlik tespiti içermeyen veriler aktarılır:
+        </p>
+        <ul>
+          <li>Rastgele oluşturulmuş anonim bir cihaz kimliği (Device ID)</li>
+          <li>Kullanıcının belirlediği takma ad (gerçek ad/soyad girilmesi zorunlu değildir)</li>
+          <li>Seçilen avatar emojisi ve sınıf bilgisi</li>
+          <li>Toplam XP, toplam çözülen soru sayısı ve son aktif olma zamanı</li>
+        </ul>
+        <p>
+          Uygulama; <strong>e-posta adresi, telefon numarası, konum bilgisi, fotoğraf, rehber veya gerçek kimlik bilgisi</strong> toplamaz.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>4. Çocukların Gizliliği ve Ebeveyn Kontrolü</h2>
+        <p>
+          Soru Takip, 13 yaş altı öğrenciler tarafından da kullanılabilecek şekilde <strong>COPPA</strong>, <strong>KVKK</strong> ve mağaza aile politikalarına uygun olarak tasarlanmıştır:
+        </p>
+        <ul>
+          <li>Üçüncü taraf davranışsal reklamcılık veya veri satışı yapılmaz.</li>
+          <li>Ebeveynler, <strong>Ebeveyn Denetimi (4 haneli PIN)</strong> özelliğini aktif ederek sınıf değişikliği, günlük oyun limiti, kayıt silme, yedek yükleme ve veri sıfırlama gibi kritik işlemleri şifre korumasına alabilir.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>5. Veri Yedekleme ve Silme Hakları</h2>
+        <ul>
+          <li><strong>Yerel Veriler:</strong> Profil ekranındaki <em>"Verileri Sıfırla"</em> seçeneği ile cihazdaki tüm kayıtlar kalıcı olarak silinebilir veya uygulama cihazdan kaldırılabilir. JSON yedekleme özelliği tamamen kullanıcının kendi kontrolündedir.</li>
+          <li><strong>Bulut (Liderlik Tablosu) Verileri:</strong> Liderlik tablosunda yer alan anonim skor kaydının silinmesini talep etmek için aşağıdaki iletişim adresinden bize ulaşabilirsiniz.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>6. İletişim</h2>
+        <p>
+          Gizlilik politikamız, ebeveyn denetimi veya veri silme talepleriniz hakkında her türlü soru için bize e-posta gönderebilirsiniz:
+        </p>
+        <p>
+          📧 <a href="mailto:destek@seninsiten.com">destek@seninsiten.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- ==================== ENGLISH CONTENT ==================== -->
+    <div id="content-en" class="hidden">
+      <div class="card">
+        <h2>1. Overview</h2>
+        <p>
+          <strong>Soru Takip</strong> is designed to help students (grades 2 to 8) track their daily study progress, set learning goals, and stay motivated through educational mini-games.
+        </p>
+        <p>
+          Protecting the privacy of students and parents is our top priority. This Privacy Policy explains what information is processed and how it is kept safe.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>2. Data Stored Locally on Your Device</h2>
+        <span class="badge">SQLite &amp; SharedPreferences</span>
+        <p>The vast majority of data generated in the app is stored strictly locally on the user's device and is never transmitted to external servers:</p>
+        <ul>
+          <li><strong>Study Records:</strong> Subject, topic, correct/incorrect/blank counts, and timestamps.</li>
+          <li><strong>Gamification &amp; Profile Preferences:</strong> Chosen nickname, avatar emoji, grade level, daily goal, XP, level, streak, break tickets, and virtual pet progress.</li>
+          <li><strong>Parental Controls:</strong> The 4-digit Parental PIN and daily game limits are stored solely on the device and are never uploaded to any server.</li>
+          <li><strong>App Settings:</strong> Theme (light/dark mode), language preference, and local notification settings.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>3. Cloud Synchronization (Firebase Firestore)</h2>
+        <span class="badge">Leaderboard</span>
+        <p>
+          To power the in-app <strong>Leaderboard</strong> feature, only the following limited, non-personally identifiable data is synced to Google Firebase Firestore:
+        </p>
+        <ul>
+          <li>An anonymous, randomly generated Device ID</li>
+          <li>User-chosen nickname (real names are not required)</li>
+          <li>Selected avatar emoji and grade level</li>
+          <li>Total XP, total questions solved, and last active timestamp</li>
+        </ul>
+        <p>
+          We do <strong>not</strong> collect email addresses, phone numbers, precise location, photos, contacts, or any real-world personal identity information.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>4. Children's Privacy &amp; Parental Controls</h2>
+        <p>
+          Soru Takip is built to comply with <strong>COPPA</strong>, <strong>Google Play Families Policy</strong>, and <strong>Apple App Store Kids guidelines</strong>:
+        </p>
+        <ul>
+          <li>We do not serve third-party behavioral advertising or sell user data.</li>
+          <li>Parents can enable the local <strong>4-digit PIN Parental Lock</strong> to restrict sensitive actions such as changing grade levels, adjusting daily game limits, deleting records, importing backups, or resetting data.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>5. Data Backup &amp; Deletion</h2>
+        <ul>
+          <li><strong>Local Data:</strong> You can permanently erase all local study records at any time using the <em>"Reset Data"</em> option in the Profile screen, or by uninstalling the app. JSON backup exports remain entirely under the user's control.</li>
+          <li><strong>Cloud (Leaderboard) Data:</strong> To request deletion of your anonymous leaderboard entry, please contact us via email below.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>6. Contact Us</h2>
+        <p>
+          If you have any questions about this Privacy Policy, parental controls, or data deletion requests, please contact us at:
+        </p>
+        <p>
+          📧 <a href="mailto:destek@seninsiten.com">destek@seninsiten.com</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2026 Soru Takip. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      const trContent = document.getElementById('content-tr');
+      const enContent = document.getElementById('content-en');
+      const btnTr = document.getElementById('btn-tr');
+      const btnEn = document.getElementById('btn-en');
+      const title = document.getElementById('page-title');
+      const subtitle = document.getElementById('page-subtitle');
+
+      if (lang === 'en') {
+        trContent.classList.add('hidden');
+        enContent.classList.remove('hidden');
+        btnTr.classList.remove('active');
+        btnEn.classList.add('active');
+        title.textContent = 'Soru Takip – Privacy Policy';
+        subtitle.textContent = 'Last Updated: November 20, 2026';
+        document.documentElement.lang = 'en';
+      } else {
+        enContent.classList.add('hidden');
+        trContent.classList.remove('hidden');
+        btnEn.classList.remove('active');
+        btnTr.classList.add('active');
+        title.textContent = 'Soru Takip – Gizlilik Politikası';
+        subtitle.textContent = 'Son Güncelleme: 20 Kasım 2026';
+        document.documentElement.lang = 'tr';
+      }
+    }
+  </script>
+</body>
+</html>
